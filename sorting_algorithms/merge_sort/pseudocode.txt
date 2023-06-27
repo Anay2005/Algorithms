@@ -1,0 +1,50 @@
+Explanation:
+
+In simple terms, we can say that the process of merge sort
+is to divide the array into two halves, sort each half, 
+and then merge the sorted halves back together. 
+
+This process is repeated until the entire array is sorted.
+Merge sort is a recursive algorithm that continuously splits the array in half until it cannot be further divided i.e., 
+the array has only one element left (an array with one element is always sorted). 
+Then the sorted subarrays are merged into one sorted array.
+
+Algorithm(refer to visual.jpg):
+
+arr = [2,4,1,6,8,5,3,7]
+
+1) Divide array into two equal subarrays as follow:
+   
+   left = [2,4,1,6] and right = [8,5,3,7]
+
+2) repeat step 1 till there is only one element left in both left and right subarrays.
+3) When there is only one element left then sort both subarrays and merge them 
+4) repeat 3 till whole of array is sorted
+
+•According to picture left array is divided until 38 and 27 remain in the subarrays. We will compare 38 and 27 and check which 
+is smaller and merge them accordingly
+
+pseudocode:
+
+merge_sort(arr, size)
+{
+   if size<2:
+      return
+
+   int mid = size/2
+   int left[mid], int right[n-mid]
+
+   for m = 0 to m<n
+   {
+      left[i] = arr[i]
+   }
+   for n = mid to m<size
+   {
+      right(n-mid) = arr[n]
+   }
+   merge_sort(left, mid)
+   merge_sort(right, size-mid)
+   merge(left, mid, right, n - mid, a); 
+
+}
+time compllexity - O(nlogn)

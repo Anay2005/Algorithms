@@ -1,0 +1,92 @@
+Explanation:
+
+In this article, we will discuss the BFS algorithm in the data structure. 
+Breadth-first search is a graph traversal algorithm that starts traversing the graph from the root node and explores all 
+the neighboring nodes. Then, it selects the nearest node and explores all the unexplored nodes. 
+While using BFS for traversal, any node in the graph can be considered as the root node.
+
+There are many ways to traverse the graph, but among them, BFS is the most commonly used approach. 
+It is a recursive algorithm to search all the vertices of a tree or graph data structure. 
+BFS puts every vertex of the graph into two categories - visited and non-visited. 
+It selects a single node in a graph and, after that, visits all the nodes adjacent to the selected node.
+
+Applications of BFS:
+
+•BFS can be used to find the neighboring locations from a given source location.
+•In a peer-to-peer network, BFS algorithm can be used as a traversal method to find all the neighboring nodes. Most torrent clients, such as BitTorrent, uTorrent, etc. employ this process to find "seeds" and "peers" in the network.
+•BFS can be used in web crawlers to create web page indexes. It is one of the main algorithms that can be used to index web pages. It starts traversing from the source page and follows the links associated with the page. Here, every web page is considered as a node in the graph.
+•BFS is used to determine the shortest path and minimum spanning tree.
+•BFS is also used in Cheney's technique to duplicate the garbage collection.
+•It can be used in ford-Fulkerson method to compute the maximum flow in a flow network.
+
+
+Algorithm:
+
+Step 1: SET STATUS = 1 (ready state) for each node in G
+
+Step 2: Enqueue the starting node A and set its STATUS = 2 (waiting state)
+
+Step 3: Repeat Steps 4 and 5 until QUEUE is empty
+
+Step 4: Dequeue a node N. Process it and set its STATUS = 3 (processed state).
+
+Step 5: Enqueue all the neighbours of N that are in the ready state (whose STATUS = 1) and set their 
+        STATUS = 2(waiting state)
+End of Loop
+Step 6: EXIT
+
+Procedure:
+
+// First, add A to queue1 and NULL to queue2.
+
+QUEUE1 = {A}    
+QUEUE2 = {NULL} 
+
+//Now delete node A and add it to QUEUE2(Visited array). Add all neighbours of A into QUEUE1
+
+QUEUE1 = {B, D}    
+QUEUE2 = {A}  
+
+//Explore B, mark it as visited in QUEUE2 and add its neighbours to QUEUE1
+
+QUEUE1 = {D, C, F}    
+QUEUE2 = {A, B}  
+
+//Now, delete node D from queue1 and add it into queue2. Insert all neighbors of node D to queue1. 
+//The only neighbor of Node D is F since it is already inserted, so it will not be inserted again.
+
+QUEUE1 = {C, F}    
+QUEUE2 = {A, B, D} 
+
+//Delete node C from queue1 and add it into queue2. Insert all neighbors of node C to queue1.
+
+QUEUE1 = {F, E, G}    
+QUEUE2 = {A, B, D, C}  
+
+//Delete node F from queue1 and add it into queue2. Insert all neighbors of node F to queue1. Since all the neighbors of node F are already present, we will not insert them again.
+
+QUEUE1 = {E, G}    
+QUEUE2 = {A, B, D, C, F}  
+
+//Delete node E from queue1. Since all of its neighbors have already been added, so we will not insert them again. Now, all the nodes are visited, and the target node E is encountered into queue2.
+
+QUEUE1 = {G}    
+QUEUE2 = {A, B, D, C, F, E}  
+
+Pseudocode:
+
+Breadth_First_Search( Graph, X ):
+    Let Q be the queue
+    Q.enqueue( X )     // Inserting source node X into the queue
+    Mark X node as visited.
+
+    While ( Q is not empty )
+        Y = Q.dequeue( )     // Removing the front node from the queue
+
+    Process all the neighbors of Y, For all the neighbors Z of Y
+    If Z is not visited:
+        Q. enqueue( Z )     // Stores Z in Q
+        Mark Z as visited
+
+Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
+Auxiliary Space: O(V)

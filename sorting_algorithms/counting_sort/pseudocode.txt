@@ -1,0 +1,23 @@
+Explanation:
+
+Counting sort is a sorting technique based on keys between a specific range. 
+It works by counting the number of objects having distinct key values (a kind of hashing). 
+Then do some arithmetic operations to calculate the position of each object in the output sequence. 
+
+Algorithm and pseudocode:
+
+countingSort(array, n) // 'n' is the size of array  
+max = find maximum element in the given array  
+create count array with size maximum + 1  
+Initialize count array with all 0's  
+for i = 0 to n  
+find the count of every unique element and   
+store that count at ith position in the count array  
+for j = 1 to max  
+Now, find the cumulative sum and store it in count array  
+for i = n to 1  
+Restore the array elements  
+Decrease the count of every restored element by 1  
+end countingSort  
+
+time complexity - O(n+k) where n is the number of elements in the input array and k is the range of input
