@@ -1,0 +1,29 @@
+Explanation:
+
+Depth-first search is an algorithm for traversing or searching tree or graph data structures. 
+The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) 
+and explores as far as possible along each branch before backtracking. 
+So the basic idea is to start from the root or any arbitrary node and mark the node and move to the adjacent unmarked 
+node and continue this loop until there is no unmarked adjacent node. Then backtrack and check for other unmarked nodes 
+and traverse them. Finally, print the nodes in the path.
+Algorithm: 
+
+•Created a stack of nodes and visited array.
+•Insert the root in the stack.
+•Run a loop till the stack is not empty.
+•Pop the element from the stack and print the element.
+•For every adjacent and unvisited node of current node, mark the node and insert it in the stack.
+
+
+Pseudocode for DFS:
+
+procedure DFS(node):
+    mark node as visited
+    process(node)
+    while array not empty
+       process(node)
+       for each neighbor in node.neighbors:
+           if neighbor is not visited:
+              DFS(neighbor)
+Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
+Auxiliary Space: O(V)

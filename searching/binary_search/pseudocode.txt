@@ -28,4 +28,23 @@ Now our new high would be mid-1.
 3)If target > nums[mid], discard all elements in the left search space, including the middle element, i.e., 
 nums[low…mid]. Now our new low would be mid+1.
 
+Conclusion:
 
+Binary Search is used for finding the location of an element in a linear array.
+
+It is a fast, efficient, and accurate search algorithm that can work on big and small datasets.
+
+It works only on Sorted arrays.
+
+Binary search uses the divide and conquer technique.
+
+The time complexity for binary search is:
+
+Best Case - O(1)
+Worst Case - O(logn)
+Average Case - O(logn)
+
+The space complexity for binary search is:
+
+recursive approach - O(logn)
+iterative approach - O(1)

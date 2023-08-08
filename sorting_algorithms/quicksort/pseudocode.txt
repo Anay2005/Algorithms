@@ -1,0 +1,41 @@
+Explanation:
+
+QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions 
+the given array around the picked pivot by placing the pivot in its correct position in the sorted array.
+
+The key process in quickSort is a partition(). The target of partitions is to place the pivot (any element can be 
+chosen to be a pivot) at its correct position in the sorted array and put all smaller elements to the left of the pivot,
+and all greater elements to the right of the pivot.
+Partition is done recursively on each side of the pivot after the pivot is placed in its correct position and this finally 
+sorts the array.
+
+algorithm:
+
+arr = [6, 8, 5, 2, 13, 9, 3, 0]
+
+1)choose pivot as leftmost or rightmost
+2)keep track of the index(i) from left end(at arr[0]) and index(j), right end(arr[n-1])
+3)increment left index and increment right index till left index>pivot and right index<=pivot
+4)swap elements
+5)continue till i<=j
+6)when i>j swap pivot and j
+7)then recursively sort the left half and right half
+
+pseudocode:
+
+quicksort(arr, start, end)
+{
+    if(start>end)
+    {
+        return
+    }
+    int pivot_index = partition(arr, start, end)
+    quicksort(arr, start, pivot_index-1)
+    quickSort(arr, pivot_index+1, end)
+}
+
+time compllexity:
+
+best case(when the array is already partitioned and middle element is chosen as pivot) - O(n^2)
+worst case(when the righmost or leftmost element is the pivot) - O(nlogn)
+average case - O(n^2)

@@ -1,0 +1,48 @@
+Explanation:
+
+Insertion sort is a stable, in-place sorting algorithm that builds the final sorted array one item at a time. 
+It is not the very best in terms of performance but more efficient traditionally than most other simple O(n2) 
+algorithms such as selection sort or bubble sort. Insertion sort is also used in Hybrid sort, which combines 
+different sorting algorithms to improve performance.
+
+It is also a well known online algorithm since it can sort a list as it receives it. In all other algorithms, 
+we need all elements to be provided to the sorting algorithm before applying it. But an insertion sort allows us to 
+start with a partial set of elements, sorts it (called a partially sorted set). If we want, we can insert more elements 
+(these are the new set of elements that were not in memory when the sorting started) and sorts them. In the real world, 
+data to be sorted is usually not static, rather dynamic. 
+If even one additional element is inserted during the sorting process, 
+other algorithms don’t respond easily. But only insertion sort algorithm is not interrupted and can respond well with the 
+additional element.
+
+algorithm:
+
+arr = [12,8,1,4,19,30]
+
+1) start at arr[0] which is a sorted subarray
+2) move on to arr[1] and check if it is greater than 12, if yes then put it into correct position in sorted subarray
+
+arr = [8,12,1,4,19,30]
+
+3)repeat until end of array
+
+pseudocode:
+
+insertionSort(arr, n)
+{
+   for i from 1 to n
+   {
+     value = arr[i]
+     j = i
+
+     while(arr[j-1]>value and j>0)
+     {
+        arr[j] = arr[j-1]
+        j--
+     }
+     arr[j] = value
+     
+      
+      
+   }
+}
+
