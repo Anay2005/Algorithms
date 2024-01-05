@@ -72,14 +72,14 @@ int dequeue()
 
 int main(void)
 {
-    if(isEmpty(front, rear))
+    if(isEmpty())
     {
        printf("The queue is empty\n");
     }
     enqueue(7);
     enqueue(9);
     enqueue(10);
-    if(isEmpty(front, rear))
+    if(isEmpty())
     {
         printf("The queue is empty\n");
     }

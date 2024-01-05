@@ -29,7 +29,7 @@ void swap(int *a, int *b)
 }
 
 // Function to rearrange a heap to maintain the heap property
-void heapify(int arr[], int i)
+void max_heapify(int arr[], int i)
 {
   int l = left(i);  // Index of left child
   int r = right(i); // Index of right child
@@ -51,17 +51,17 @@ void heapify(int arr[], int i)
   if (largest != i)
   {
     swap(&arr[largest], &arr[i]); // Swap root and largest
-    heapify(arr, largest);        // Recursively heapify the affected sub-tree
+    max_heapify(arr, largest);    // Recursively heapify the affected sub-tree
   }
 }
 
-// Function to create a max heap from an array
+// Function to create a max heap from an array in O(n) time
 void create_heap(int arr[])
 {
-  int i = (end - 2) / 2; // Start from the last internal node
+  int i = (end - 2) / 2; // Start from the last internal node, remember this formula for zero indexing
   while (i >= 0)
   {
-    heapify(arr, i--); // Call heapify on all internal nodes
+    max_heapify(arr, i--); // Call heapify on all internal nodes
   }
 }
 
