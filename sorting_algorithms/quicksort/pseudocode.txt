@@ -37,5 +37,5 @@ quicksort(arr, start, end)
 time compllexity:
 
 best case(when the array is already partitioned and middle element is chosen as pivot) - O(n^2)
-worst case(when the righmost or leftmost element is the pivot) - O(nlogn)
-average case - O(n^2)
+worst case(when the righmost or leftmost element is the pivot) - O(n^2)
+average case - O(nlogn)

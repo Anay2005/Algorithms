@@ -9,6 +9,7 @@ void swap(int *a, int *b)
   int t = *a;
   *a = *b;
   *b = t;
+  return;
 }
 // implementation of partition function
 int partition(int arr[], int start, int end)
@@ -46,6 +47,10 @@ int partition(int arr[], int start, int end)
 
 void quicksort(int arr[], int start, int end)
 {
+  // consider array {5,4,3,2,1}
+  // after partition it becomes {1,4,3,2,5}
+  // then for the right half, start = 5 and end = 4
+  // see the importance of base case
   // base condition
   if (start >= end)
   {
@@ -58,6 +63,7 @@ void quicksort(int arr[], int start, int end)
   quicksort(arr, start, pivot_index - 1);
   // recur on subarray containing elements that are more than the pivot
   quicksort(arr, pivot_index + 1, end);
+  return;
 }
 
 int main(void)
@@ -76,7 +82,9 @@ int main(void)
   // print sorted array
   for (int j = 0; j < N; j++)
   {
-    printf("%i", arr[j]);
+    printf("%d", arr[j]);
     printf(",");
   }
+  printf("\n");
+  return 0;
 }
