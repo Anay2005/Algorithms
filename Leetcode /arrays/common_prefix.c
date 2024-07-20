@@ -6,7 +6,7 @@ char* longest_common_prefix(char **strs, size_t array_size);
 
 int main() 
 {
-    // strs is an array of pointers
+    //strs is an array of pointers
     // strs: [ ptr to "flower", ptr to "flow", ptr to "flight" ]
     // strs[i] gives a pointer to i th string
     // strs[i][j] can be used to access the j th char in the i th string
