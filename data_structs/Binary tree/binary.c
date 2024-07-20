@@ -1,6 +1,8 @@
 /*
 I will implement binary tree operations: Search, Insert, Delete Min, Max, Successor and predecessor all run in O(h) time, where h
-is the height of the tree
+is the height of the tree.
+
+Duplicate keys are not allowed in binary tree
 */
 
 #include <stdio.h>
@@ -58,7 +60,7 @@ int main(void)
         int value;
         // Prompt the user for data
         printf("Please enter data: ");
-        // Read the  data and then store it in the node
+        // Read the data and then store it in the node
         scanf("%d", &value);
 
         // Prompt the user for key
@@ -195,6 +197,7 @@ int main(void)
 void insert(Node *node, Node **root)
 {
     // keep track of the current node
+    // we insert to left or right of the current node
     Node *current = *root;
     // intialize the first node
     if (*root == NULL)
@@ -207,7 +210,7 @@ void insert(Node *node, Node **root)
 
         return;
     }
-    // use a traverse node for comparison
+    // use a traverse node
     Node *tra = *root;
 
     // Traverse to the correct spot to insert the node
